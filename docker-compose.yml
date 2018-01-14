@@ -1,0 +1,11 @@
+version: '2.0'
+services:
+  app.serve:
+    image: node:8
+    user: node
+    working_dir: /home/node/frontend
+    volumes: ["./:/home/node/frontend"]
+    command: ["npm", "start"]
+    expose:
+      - "4200"
+    ports: ["4200:4200"]
