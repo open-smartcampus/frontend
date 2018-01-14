@@ -5,10 +5,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "npm run pug:build && ng build",
+    "test": "npm run pug:build && ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "pug:watch": "pug -O \"{'doctype':'html'}\" -P --watch src/**/*",
+    "pug:build": "pug -O \"{'doctype':'html'}\" src/**/*"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +26,6 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "core-js": "^2.4.1",
-    "cypress": "^1.4.1",
     "pug": "^2.0.0-rc.4",
     "pug-html-loader": "^1.1.5",
     "raw-loader": "^0.5.1",
@@ -49,6 +50,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "pug-cli": "^1.0.0-alpha6",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"
