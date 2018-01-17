@@ -4,12 +4,12 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run pug:watch && ng serve",
     "build": "npm run pug:build && ng build",
     "test": "npm run pug:build && ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "pug:watch": "pug -O \"{'doctype':'html'}\" -P --watch src/**/*",
+    "pug:watch": "pug -O \"{'doctype':'html'}\" -P --watch src/**/* &",
     "pug:build": "pug -O \"{'doctype':'html'}\" src/**/*"
   },
   "private": true,
